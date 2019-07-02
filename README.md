@@ -38,8 +38,6 @@ Copy and paste this plan ID back into “license.php” where it says #2. You ha
 
 <img width="789" alt="5" src="https://user-images.githubusercontent.com/6611854/60490121-8503d280-9cd8-11e9-95a3-e0467d0f6c21.png">
 
-However, there are still variables that require front end change for users to see.
-
 -----------------------------------------------------------------------------------------------------------------------------
 
 **_Front End_**
