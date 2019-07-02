@@ -40,6 +40,8 @@ Copy and paste this plan ID back into “license.php” where it says #2. You ha
 
 However, there are still variables that require front end change for users to see.
 
+-----------------------------------------------------------------------------------------------------------------------------
+
 **_Front End_**
 
 Going back to the root folder containing all the code for your Subscription Plug-In, navigate to “admin” > “subscribe.php” and open it. Search for the form tag that is shown in the picture below and you will need to change the following variables according to your unique plan (underlined).
@@ -58,14 +60,21 @@ Going back to the root folder containing all the code for your Subscription Plug
 
 [8]
 
-Adding a Free Trial to your Subscription Plan
+-----------------------------------------------------------------------------------------------------------------------------
+
+**_Adding a Free Trial to your Subscription Plan_**
+
 If you want to add a free trial to your Subscription Plan, be sure to specify the duration of this trial on the Front End with the user. Return back to the root folder containing all the code for your Subscription Plug-In and navigate to “admin” > “trial.php” and open it. The underlined code in the illustration below follows this logic: time = current time + number of seconds. Therefore, changing the number of seconds would change the duration of the trial. For example, if you want to have a 15-day trial, your line of code should look like: 
 $time = time() + 15*24*60*60; (15days * 24 hours * 60 minutes * 60 seconds).
 
 [trial]
 
-One-Time Fee
-Back End
+-----------------------------------------------------------------------------------------------------------------------------
+
+## One-Time Fee ##
+
+**_Back End_**
+
 Start by downloading Arcadier’s Charge file containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1.
 
 [9]
@@ -74,22 +83,22 @@ In order to create a One-Time fee that will be charged to your connected Stripe 
 
 [10]
 
-•	Amount: The amount (in cents) of money you will be charging the user
-o	This is the actual amount that will be charged to the user
-•	Currency: The currency of which the above amount will be charged in
+ * Amount: The amount (in cents) of money you will be charging the user
+	 * This is the actual amount that will be charged to the user
+ * Currency: The currency of which the above amount will be charged in
 
 Front End
 Going back to the root folder containing all the code for your Subscription Plug-In, navigate to “admin” > “subscribe.php” and open it. Search for the form tag that is shown in the picture below and you will need to change the following variables according to your unique plan (underlined).
 
 [11]
 
-•	Text on the main page before the Payment button
-•	Data-key: Your Stripe account’s publishable key (from when you retrieved it earlier)
-•	Data-name: Name of your Plug-In
-•	Data-description: Details about specific Payment Plan
-•	Data-amount: The value that is ONLY DISPLAYED on the pay button (in cents)
-o	This does not affect the actual cost of the One-Time Fee
-•	Data-label: The name of the button
+ * Text on the main page before the Payment button
+ * Data-key: Your Stripe account’s publishable key (from when you retrieved it earlier)
+ * Data-name: Name of your Plug-In
+ * Data-description: Details about specific Payment Plan
+ * Data-amount: The value that is ONLY DISPLAYED on the pay button (in cents)
+ 	 * This does not affect the actual cost of the One-Time Fee
+ * Data-label: The name of the button
 
 [12]
 
