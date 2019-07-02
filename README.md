@@ -16,6 +16,7 @@ For your individual Plug-In, decide on whether you want to make it a subscriptio
 ## Subscription Plan ##
 
 **_Back End_**
+
 Start by downloading **Arcadier’s Subscription file** containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1. 
 
 <img width="789" alt="1" src="https://user-images.githubusercontent.com/6611854/60490114-83d2a580-9cd8-11e9-8564-7ad7f7eff37d.png">
@@ -40,17 +41,18 @@ Copy and paste this plan ID back into “license.php” where it says #2. You ha
 However, there are still variables that require front end change for users to see.
 
 **_Front End_**
+
 Going back to the root folder containing all the code for your Subscription Plug-In, navigate to “admin” > “subscribe.php” and open it. Search for the form tag that is shown in the picture below and you will need to change the following variables according to your unique plan (underlined).
 	
 [6]
 
-•	Text on the main page before the Subscription button
-•	Data-key: Your Stripe account’s publishable key (from when you retrieved it earlier)
-•	Data-name: Name of your Plug-In
-•	Data-description: Details about specific Subscription Plan
-•	Data-amount: The value that is ONLY DISPLAYED on the pay button (in cents)
-o	This does not affect the actual cost of the Subscription Plan
-•	Data-label: The name of the button
+ * Text on the main page before the Subscription button
+ * Data-key: Your Stripe account’s publishable key (from when you retrieved it earlier)
+ * Data-name: Name of your Plug-In
+ * Data-description: Details about specific Subscription Plan
+ * Data-amount: The value that is ONLY DISPLAYED on the pay button (in cents)
+ 	* This does not affect the actual cost of the Subscription Plan
+ * Data-label: The name of the button
 
 [7]
 
