@@ -17,7 +17,7 @@ For your individual Plug-In, decide on whether you want to make it a subscriptio
 
 **_Back End_**
 
-Start by downloading **Arcadier’s Subscription file** containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1. 
+Start by downloading **Arcadier’s Subscription file** (NEED TO CHANGE) containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1. 
 
 <img width="789" alt="1" src="https://user-images.githubusercontent.com/6611854/60490114-83d2a580-9cd8-11e9-8564-7ad7f7eff37d.png">
 
@@ -75,7 +75,7 @@ $time = time() + 15 * 24 * 60 * 60; (15days * 24 hours * 60 minutes * 60 seconds
 
 **_Back End_**
 
-Start by downloading **Arcadier’s Charge file** containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1.
+Start by downloading **Arcadier’s Charge file** (NEED TO CHANGE) containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1.
 
 <img width="647" alt="9" src="https://user-images.githubusercontent.com/6611854/60490130-8634ff80-9cd8-11e9-9f7e-993d35964cf5.png">
 
@@ -111,10 +111,9 @@ Going back to the root folder containing all the code for your Subscription Plug
 
 ## Location of Actual Plug-In ##
 
-ADD MORE
-Now that you have added a payment method (subscription or one-time fee), here is where you add the actual content of the Plug-In you are trying to sell. Whether you are implementing a Subscription Plan or a One-Time Fee, the location of the actual Plug-In itself should remain the same. In either of the root folders (depending on your method of payment), navigate to “admin” > “index.php” and open it. Your Plug-In code should go inside the if-statement just before the else-statement. If you take a look at the illustration below, it explains the logic behind this effect. The if-statement asks if the license is valid (which means paid), and if it is, then execute the according Plug-In. Essentially your code should go within the indicated box.
+Now that you have added a payment method (subscription or one-time fee), here is where you add the actual content of the Plug-In you are trying to sell. Whether you are implementing a Subscription Plan or a One-Time Fee, the location of the actual Plug-In itself should remain the same. In your root folder, you should have the same structure as normal Plug-Ins, in that there are three internal directories called "css", "html", and "scripts". However, in the case of an additional Stripe Payment, your "html" file should be empty while your "css" and "scripts" files remain the same. Now, return to your root folder and navigate to “admin” > “index.php” and open it. Your Plug-In's html code should go inside the if-statement just before the else-statement. If you take a look at the illustration below, the if-statement asks if the license is valid (which means paid), and if it is, then it will execute the according Plug-In. Essentially your Plug-In's "index.html" code should go within the indicated box.
 
 <img width="1186" alt="14" src="https://user-images.githubusercontent.com/6611854/60490137-86cd9600-9cd8-11e9-8b79-e257b75c3573.png">
 
-Your Plug-In has Stripe now integrated to it and you may now customize your payment request!
+Your Plug-In has Stripe now integrated into it and you may now customize your payment request!
 
