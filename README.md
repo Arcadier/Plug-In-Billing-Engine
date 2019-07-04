@@ -17,7 +17,7 @@ For your individual Plug-In, decide on whether you want to make it a subscriptio
 
 **_Back End_**
 
-Start by downloading **Arcadier’s Subscription file** (NEED TO CHANGE) containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1. 
+Start by downloading Arcadier’s Subscription Plan file containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1. 
 
 <img width="789" alt="1" src="https://user-images.githubusercontent.com/6611854/60490114-83d2a580-9cd8-11e9-8564-7ad7f7eff37d.png">
 
@@ -65,7 +65,7 @@ Going back to the root folder containing all the code for your Subscription Plug
 If you want to add a free trial to your Subscription Plan, be sure to specify the duration of this trial on the Front End with the user. Return back to the root folder containing all the code for your Subscription Plug-In and navigate to “admin” > “trial.php” and open it. The underlined code in the illustration below follows this logic: time = current time + number of seconds. Therefore, changing the number of seconds would change the duration of the trial. For example, if you want to have a 15-day trial, your line of code should look like: 
 $time = time() + 15 * 24 * 60 * 60; (15days * 24 hours * 60 minutes * 60 seconds).
 
-[trial]
+<img width="567" alt="trial - need to update" src="https://user-images.githubusercontent.com/6611854/60636017-64a65600-9e47-11e9-9375-2e7908271703.png">
 
 -----------------------------------------------------------------------------------------------------------------------------
 
@@ -73,7 +73,7 @@ $time = time() + 15 * 24 * 60 * 60; (15days * 24 hours * 60 minutes * 60 seconds
 
 **_Back End_**
 
-Start by downloading **Arcadier’s Charge file** (NEED TO CHANGE) containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1.
+Start by downloading Arcadier’s Charge file containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1.
 
 <img width="647" alt="9" src="https://user-images.githubusercontent.com/6611854/60490130-8634ff80-9cd8-11e9-9f7e-993d35964cf5.png">
 
