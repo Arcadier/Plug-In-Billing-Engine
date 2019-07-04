@@ -1,10 +1,16 @@
 <p align="center"><img src="https://theme.zdassets.com/theme_assets/2008942/9566e69f67b1ee67fdfbcd79b1e580bdbbc98874.svg"/></p>
 
-## How to Add a Stripe Payment Method to your Plug-In ##
+1. [Setting up the Plug-In Billing Engine]()
+2. [Setting up a recurring payment to use your Plug-In]()
+3. [Setting up a one time fee to use your Plug-In]()
+4. [How to set a free trial period?]()
+5. [What if a payment is not successful for the recurring payment?]() 
 
-This guide is intended to help Developers add a Stripe payment to their Plug-ins for marketplace Admins. With the addition of the Stripe payment method, you can make your Arcadier Plug-In require payment either on a subscription plan or a one-time fee. This will be a step by step guide on how to add a Stripe payment method to your Plug-Ins.
+## Setting up the Plug-In Billing Engine ##
 
-If you do not have a Stripe account, please go to their [homepage](https://stripe.com/en-sg?&utm_campaign=paid_brand-SG_en_Search_Brand_Stripe&utm_medium=cpc&utm_source=google&ad_content=301266036615&utm_term=stripe&utm_matchtype=e&utm_adposition1t1&utm_device=c&gclid=Cj0KCQjw3uboBRDCARIsAO2XcYAvCHyVJVdkKpY27rpxOXvB4kkymiuAAO01RgHZC64I3hNqAqGHbaAaAvsREALw_wcB) and create one. Once you have your Stripe account, please take note of your account’s publishable key and secret key. To obtain your Stripe’s publishable key and secret key, navigate to “Developers” > “API keys” on your Stripe Dashboard. Out of the two keys, you will have to manually reveal your secret key to retrieve it.
+This guide is intended to help Developers integrate Stripe to their Plug-Ins. Using this, you can charge your marketplace admins directly on a subscription basis or a one-time fee. This will be a step-by-step guide on how to wrap the Billing Engine's source code around your Plug-In's code.
+
+First thing you will need is a Stripe account. If you do not have a Stripe account, please go to their [homepage](https://stripe.com/en-sg?&utm_campaign=paid_brand-SG_en_Search_Brand_Stripe&utm_medium=cpc&utm_source=google&ad_content=301266036615&utm_term=stripe&utm_matchtype=e&utm_adposition1t1&utm_device=c&gclid=Cj0KCQjw3uboBRDCARIsAO2XcYAvCHyVJVdkKpY27rpxOXvB4kkymiuAAO01RgHZC64I3hNqAqGHbaAaAvsREALw_wcB) and create one. Once you have your Stripe account, take note of your account’s `Publishable key` and `Secret key`. To obtain them, navigate to “Developers” > “API keys” on your Stripe Dashboard. Out of the two keys, you will have to manually reveal your secret key to retrieve it.
 
 <p align="center"><img width="1416" alt="key" src="https://user-images.githubusercontent.com/6611854/60490138-87662c80-9cd8-11e9-908f-5df8d785f2d1.png"></p>
 
@@ -14,11 +20,11 @@ For your individual Plug-In, decide on whether you want to make it a subscriptio
 
 -----------------------------------------------------------------------------------------------------------------------------
 
-## Subscription Plan ##
+## Setting up a recurring payment to use your Plug-In ##
 
 **_Back End_**
 
-Start by downloading Arcadier’s Subscription Plan file containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1. 
+Start by downloading Arcadier’s `Subscription` folder. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe Secret key into #1. 
 
 <p align="center"><img width="789" alt="1" src="https://user-images.githubusercontent.com/6611854/60490114-83d2a580-9cd8-11e9-8564-7ad7f7eff37d.png"></p>
 
@@ -54,6 +60,7 @@ Going back to the root folder containing all the code for your Subscription Plug
  * Data-amount: The value that is ONLY DISPLAYED on the pay button (in cents)
  	* This does not affect the actual cost of the Subscription Plan
  * Data-label: The name of the button
+z
 
 <p align="center"><img width="1369" alt="7" src="https://user-images.githubusercontent.com/6611854/60490123-859c6900-9cd8-11e9-9064-d442a1d180da.png"></p>
 
