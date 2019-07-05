@@ -73,7 +73,7 @@ $time = time() + 15 * 24 * 60 * 60; (15days * 24 hours * 60 minutes * 60 seconds
 
 **_Back End_**
 
-Start by downloading Arcadier’s Charge file containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1.
+Start by downloading **Arcadier’s Charge file** containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1.
 
 <img width="647" alt="9" src="https://user-images.githubusercontent.com/6611854/60490130-8634ff80-9cd8-11e9-9f7e-993d35964cf5.png">
 
