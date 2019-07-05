@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contentBodyJson = file_get_contents('php://input');
     $content = json_decode($contentBodyJson, true);
     $phpExit = '<?php exit(); ?>';
-    $adminID = $content['adminID'];
+    //$adminID = $content['adminID'];
     $baseUrl = $content['baseURL'];
     $packageId = $content['packageID'];
     $GETurl = 'https://'.$baseUrl.'/api/v2/plugins/'.$packageId.'/custom-tables/Tanoo/';
@@ -14,16 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $adminrowID = false;
     $hasUsed = false;
     foreach($table['Records'] as $row){
-        if($row['BaseURL']==$baseUrl)
-        {
+        if($row['BaseURL']==$baseUrl){
             $adminrowID = $row['Id'];
             $hasUsed = $row['HasUsedTrial'];
         }
     }
     
     if (file_exists('../license/trial-expire.php') == false) {
-        if (!$adminrowID)
-        {
+        if (!$adminrowID){
             $time = time() + 30;
             file_put_contents('../license/trial-expire.php', $time);
             $url = 'https://'.$baseUrl.'/api/v2/plugins/'.$packageId.'/custom-tables/Tanoo/rows';
