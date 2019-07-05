@@ -17,7 +17,7 @@ For your individual Plug-In, decide on whether you want to make it a subscriptio
 
 **_Back End_**
 
-Start by downloading Arcadier’s Subscription Plan file containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1. 
+Start by downloading Arcadier’s Subscription Plan file containing the internal Plug-In Billing Engine that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1. 
 
 <img width="789" alt="1" src="https://user-images.githubusercontent.com/6611854/60490114-83d2a580-9cd8-11e9-8564-7ad7f7eff37d.png">
 
@@ -113,5 +113,5 @@ Now that you have added a payment method (subscription or one-time fee), here is
 
 <img width="1186" alt="14" src="https://user-images.githubusercontent.com/6611854/60490137-86cd9600-9cd8-11e9-8b79-e257b75c3573.png">
 
-Your Plug-In has Stripe now integrated into it and you may now customize your payment request!
+Your Plug-In now has the Plug-In Billing Engine integrated into it and you may now customize your payment request!
 
