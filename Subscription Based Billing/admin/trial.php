@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if (file_exists('../license/trial-expire.php') == false) {
         if (!$adminrowID){
-            $time = time() + 30;
+            $time = time() + 30; //30 second trial for fast testing purposes
             file_put_contents('../license/trial-expire.php', $time);
             $url = 'https://'.$baseUrl.'/api/v2/plugins/'.$packageId.'/custom-tables/Tanoo/rows';
             $data = [ 
