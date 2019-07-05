@@ -65,7 +65,7 @@ Going back to the root folder containing all the code for your Subscription Plug
 If you want to add a free trial to your Subscription Plan, be sure to specify the duration of this trial on the Front End with the user. Return back to the root folder containing all the code for your Subscription Plug-In and navigate to “admin” > “trial.php” and open it. The underlined code in the illustration below follows this logic: time = current time + number of seconds. Therefore, changing the number of seconds would change the duration of the trial. For example, if you want to have a 15-day trial, your line of code should look like: 
 $time = time() + 15 * 24 * 60 * 60; (15days * 24 hours * 60 minutes * 60 seconds).
 
-<img width="567" alt="trial - need to update" src="https://user-images.githubusercontent.com/6611854/60636017-64a65600-9e47-11e9-9375-2e7908271703.png">
+<img width="1133" alt="trial" src="https://user-images.githubusercontent.com/6611854/60697597-a3a6db00-9f1d-11e9-93a6-89f24c86d723.png">
 
 -----------------------------------------------------------------------------------------------------------------------------
 
