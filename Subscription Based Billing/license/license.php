@@ -6,8 +6,8 @@ spl_autoload_register(function ($class_name) {
 require_once '../vendors/stripe-php/init.php';
 class License {
     private $isValid = false;
-    private $stripeKey = "sk_test_yFNsENaEKFANhaO80bTCw38R"; // #1
-    private $planId = 'plan_FKvAnxKEKUC0xe'; // #2
+    private $stripeKey = "your-stripe-secret-key"; // #1
+    private $planId = 'your-plan-id'; // #2
     private $trial_file = '../license/trial-expire.php';
     private $stripe_subscription_id = '../license/stripe-user.php';
     private $phpExit = '<?php exit(); ?>';
