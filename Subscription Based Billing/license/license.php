@@ -77,9 +77,9 @@ class License {
 
     function deactivate() {
         if ($this->isValid()) {
-            // TODO:
-            // Call to your service to de-activate this account
-            // In this sample code, we will check with Stripe server
+            //This function is called when the Plug-In is uninstalled.
+            //It calls Stripe's API to cancel the subscription on Stripe's side
+            //It also ends the subscription on the Plug-in's side
 
             if (file_exists($this->stripe_subscription_id) == true) {
                 $subscriptionId = file_get_contents($this->stripe_subscription_id);
