@@ -1,0 +1,90 @@
+/*contact*/
+.subscription-content > span {
+    display: inline-block;
+    width: 100%;
+    text-align:left;
+    margin-bottom: 15px;
+}
+.subscription-content > span > i, .subscription-content > span > p {
+    display: inline-block;
+}
+.subscription-content > span > i{
+    margin-right:10px;
+}
+.subscription-container {
+    text-align: center;
+    color: #808080;
+    font-family: 'AileronRegular';
+    max-width: 430px;
+    margin: 50px auto;
+}
+.subscription-content > p {
+    margin-bottom: 25px;
+}
+
+#a,
+#b,
+#c {
+  background-color: #CDCDCD;
+}
+
+@import "compass/css3";
+
+.cause, .display {
+  -webkit-border-radius: 6px;
+  background-color: #f0f7fb;
+  border: solid 2px #3498db;
+  border-radius: 6px;
+  line-height: 10px;
+  padding: 12px;
+  display: inline-block;
+}
+
+#table {
+  font-family: 'Arial';
+  margin: 25px auto;
+  text-align: center;
+  border: 1px solid #eee;
+  border-bottom: 2px solid #00cccc;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
+     0px 10px 20px rgba(0,0,0,0.05),
+     0px 20px 20px rgba(0,0,0,0.05),
+     0px 30px 20px rgba(0,0,0,0.05);
+}
+
+  th, td {
+    color: #999;
+    border: 1px solid #eee;
+    padding: 12px 35px;
+    border: 1px solid #eee;
+    vertical-align: middle;
+  }
+  th {
+    background: #00cccc;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  tr {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+.display {
+  -webkit-border-radius: 6px;
+  background-color: #f0f7fb;
+  border: solid 2px #3498db;
+  border-radius: 6px;
+  line-height: 10px;
+  padding: 12px;
+  display: inline-block;
+  width: 100px;
+  height:75px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+#causes_saved{
+  margin-top: 25px;
+}
