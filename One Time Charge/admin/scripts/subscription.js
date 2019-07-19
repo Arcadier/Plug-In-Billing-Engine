@@ -14,5 +14,36 @@
 
     var apiUrl = packagePath + '/create_subscription.php';
     $('#subscription-form').attr('action', apiUrl);
+    
+    //Uncomment this if you want the Try Me to work
+    if ($('#continue-trial').length) {
+            $('#continue-trial').click(function() {
+                var apiUrl = packagePath + '/trial.php';
+                
+                var data = {
+                    'adminID': userId,
+                    'packageID':packageId,
+                    'baseURL':hostname
+                };
 
+                $.ajax({
+                    url: apiUrl,
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
+                    success: function(response) {
+                        console.log(response);
+                        if (response > 0) {
+                            window.location = 'index.php';
+                        }
+                        if(response == "error"){
+                            toastr.error("YOu have used the trial before", "Not Allowed");
+                        }
+                    },
+                    error: function(){
+                        console.log("Error");
+                    }
+                });
+            });
+        }
 })();
