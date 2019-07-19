@@ -1,6 +1,6 @@
 ![Arcadier](https://theme.zdassets.com/theme_assets/2008942/9566e69f67b1ee67fdfbcd79b1e580bdbbc98874.svg "Arcadier")
 
-## Charge Marketplace Owners for using your Plug-In using ##
+## Charge Marketplace Owners for using your Plug-In ##
 
 This Billing Engine offers 2 ways of collecting payment from the users of your Plug-In: 
 * On a subscription basis
