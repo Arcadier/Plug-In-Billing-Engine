@@ -1,28 +1,28 @@
 ![Arcadier](https://theme.zdassets.com/theme_assets/2008942/9566e69f67b1ee67fdfbcd79b1e580bdbbc98874.svg "Arcadier")
 
-## How to Add a Plug-In Billing Engine to your Plug-In ##
+## Charge Marketplace Owners for using your Plug-In ##
 
-This guide is intended to help Developers add a Plug-In Billing Engine to their Plug-ins for marketplace Admins. With the addition of the Plug-In Billing Engine, you can make your Arcadier Plug-In require payment either on a subscription plan or a one-time fee. Please take note that settlements with the Admin users will be done on the Stripe platform. Also, the transaction history for the Billing Engine will only be captured in the Stripe interface.
+This Billing Engine offers 2 ways of collecting payment from the users of your Plug-In: 
+* On a subscription basis
+* One time fee
 
-If you do not have a Stripe account, please go to their [homepage](https://stripe.com/en-sg?&utm_campaign=paid_brand-SG_en_Search_Brand_Stripe&utm_medium=cpc&utm_source=google&ad_content=301266036615&utm_term=stripe&utm_matchtype=e&utm_adposition1t1&utm_device=c&gclid=Cj0KCQjw3uboBRDCARIsAO2XcYAvCHyVJVdkKpY27rpxOXvB4kkymiuAAO01RgHZC64I3hNqAqGHbaAaAvsREALw_wcB) and create one. Once you have your Stripe account, please take note of your account’s publishable key and secret key. To obtain your Stripe’s publishable key and secret key, navigate to “Developers” > “API keys” on your Stripe Dashboard. Out of the two keys, you will have to manually reveal your secret key to retrieve it.
+To start using any of those, you'll need a Stripe Dashboard, you can get one [here](https://stripe.com/en-sg?&utm_campaign=paid_brand-SG_en_Search_Brand_Stripe&utm_medium=cpc&utm_source=google&ad_content=301266036615&utm_term=stripe&utm_matchtype=e&utm_adposition1t1&utm_device=c&gclid=Cj0KCQjw3uboBRDCARIsAO2XcYAvCHyVJVdkKpY27rpxOXvB4kkymiuAAO01RgHZC64I3hNqAqGHbaAaAvsREALw_wcB). Once you have your Stripe account, navigate to `Developers` > `API keys` and take note of you Publishable and Secret Keys.
 
 <img width="1416" alt="key" src="https://user-images.githubusercontent.com/6611854/60490138-87662c80-9cd8-11e9-908f-5df8d785f2d1.png">
 
-Once you have your Stripe’s publishable key and secret key, hold onto them both as you will need to configure manual settings using these two keys. We will be using the secret key first.
-
-For your individual Plug-In, decide on whether you want to make it a subscription basis or a one-time fee. If you want to have a one-time payment fee on your Plug-In, scroll down till you see “One-Time Fee”. Otherwise, if you want to have a subscription plan on your Plug-In continue reading below.
-
 -----------------------------------------------------------------------------------------------------------------------------
 
-## Subscription Plan ##
+## Subscription Basis Plan ##
 
 **_Back End_**
 
-Start by downloading Arcadier’s Subscription Plan file containing the internal Plug-In Billing Engine that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1. 
+Start by downloading/cloning the Subscription Plan folder. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and insert your Stripe’s secret key into the line commented "#1". 
 
 <img width="789" alt="1" src="https://user-images.githubusercontent.com/6611854/60490114-83d2a580-9cd8-11e9-8564-7ad7f7eff37d.png">
 
-In order to create a Subscription plan, go back to your Stripe account, navigate to “Billing” > “Products” and then click on “New”. Give your product a name, and unit label or statement descriptor if necessary, and create the product.
+You will also needa `PlanID` to be inserted at the line commented #2. To get this, 
+* Go back to your Stripe Dashboard
+* Navigate to `Billing` > `Products` and then click on `New`. Give your product a name, and unit label or statement descriptor, if necessary, and create the product.
 
 <img width="1433" alt="2" src="https://user-images.githubusercontent.com/6611854/60490118-83d2a580-9cd8-11e9-96fc-e642c06d862c.png">
 
@@ -31,11 +31,11 @@ as its Name, Currency, Price per Unit, and Billing interval.
 
 <img width="1433" alt="3" src="https://user-images.githubusercontent.com/6611854/60490119-846b3c00-9cd8-11e9-85b4-9faaa53e8398.png">
 
-Once your Pricing Plan has been created, click on it and you will be able to retrieve the plan ID that you will require.
+Once your Pricing Plan has been created, click on it and you will be able to retrieve the **Plan ID** that you need.
 
 <img width="1431" alt="4" src="https://user-images.githubusercontent.com/6611854/60490120-846b3c00-9cd8-11e9-8c81-053de3a34a42.png">
 
-Copy and paste this plan ID back into “license.php” where it says #2. You have now connected both your Stripe account to your Subscription Plug-In as well as a payment plan.
+Copy and paste this plan ID back into “license.php” where it says #2.
 
 <img width="789" alt="5" src="https://user-images.githubusercontent.com/6611854/60490121-8503d280-9cd8-11e9-95a3-e0467d0f6c21.png">
 
@@ -48,12 +48,13 @@ Going back to the root folder containing all the code for your Subscription Plug
 <img width="1000" alt="6" src="https://user-images.githubusercontent.com/6611854/60490122-8503d280-9cd8-11e9-93a4-81ba50072c8e.png">
 
  * Text on the main page before the Subscription button
- * Data-key: Your Stripe account’s publishable key (from when you retrieved it earlier)
+ * Data-key: Your Stripe Publishable key 
  * Data-name: Name of your Plug-In
  * Data-description: Details about specific Subscription Plan
+ * Data-image: Absolute or relative URL of the image that you want to appear on the payment pop-up
  * Data-amount: The value that is ONLY DISPLAYED on the pay button (in cents)
  	* This does not affect the actual cost of the Subscription Plan
- * Data-label: The name of the button
+ * Data-label: The text on the pay button
 
 <img width="1369" alt="7" src="https://user-images.githubusercontent.com/6611854/60490123-859c6900-9cd8-11e9-9064-d442a1d180da.png">
 
