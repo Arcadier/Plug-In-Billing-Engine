@@ -13,17 +13,18 @@ if (!$licence->isValid()) {
 <link href="css/style.css" rel="stylesheet">
 <!-- end header -->
 <div class="subscription-container">
-    <h2>Package Subscription page</h2>
+    <h2>Plug-In Subscription page</h2>
     <div class="subscription-content">
         <p>You can try this package for 30 sec. After that, it is $100/year.</p>
         <div class="btn-subscribe">
             <form action="" method="POST" id="subscription-form" enctype="application/x-www-form-urlencoded">
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" 
                 data-key="pk_test_Xi2dzgwf92GFsPvucVjGm7I8" 
-                data-name="Hello World" 
-                data-description="Subscription for 1 year" 
+                data-name="Arcadier Team" 
+                data-description="Subscription for 1 year"
+                data-image="https://stripe.com/img/v3/home/twitter.png" 
                 data-amount="10000" 
-                data-label="Buy">
+                data-label="Subscribe">
                 </script>
             </form>
             <form action="" method="POST" id="subscription-form" enctype="application/x-www-form-urlencoded">
