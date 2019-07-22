@@ -48,7 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo $time;
         }
         else{
-            echo "Time up";
             $url = 'https://'.$baseUrl.'/api/v2/plugins/'.$packageId.'/custom-tables/Tanoo/rows/'.$adminrowID;
             $data = [
                'HasUsedTrial' => 'Yes'
