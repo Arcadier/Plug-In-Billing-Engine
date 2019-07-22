@@ -12,7 +12,7 @@ $packageId = fetchPackageID();
 require_once '../vendors/stripe-php/init.php';
 class License {
     private $isValid = false;
-    private $stripeKey = "sk_test_yFNsENaEKFANhaO80bTCw38R"; // #1
+    private $stripeKey = "YOUR_SECRET_KEY"; // #1
     private $planId = 'plan_FKvAnxKEKUC0xe'; // #2
     private $trial_file = '../license/trial-expire.php';
     private $stripe_subscription_id = '../license/stripe-user.php';
