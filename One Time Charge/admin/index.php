@@ -10,6 +10,8 @@ $licence = new License();
 if ($licence->isValid()) {
     ?>
 <!-- plugin index.html -->
+Welcome to Plug-In
+<!-- <script> console.log("Welcome"); </script> -->
 <?php
 } else {
     $location = $baseUrl . '/admin/plugins/' . $packageId . '/subscribe.php';
