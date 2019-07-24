@@ -15,24 +15,35 @@ class License {
     }
 
     function isValid() {
+
         if (file_exists($this->stripe_charge_id) == false && file_exists($this->trial_file) == false) {
             $this->isValid = false;
             return $this->isValid;
         }
-        if (file_exists($this->stripe_charge_id) == true) {
+
+        if(file_exists($this->stripe_charge_id) == true){
             $chargeId = file_get_contents($this->stripe_charge_id);
             $chargeId = str_replace($phpExit, '', $chargeId);
             if ($chargeId != null) {
                 \Stripe\Stripe::setApiKey($this->stripeKey);
                 $charge = \Stripe\Charge::retrieve($chargeId);
-                error_log(json_encode($charge));
-                if ($charge->status == 'succeeded') {
-                    $this->isValid = true;
-                } else {
+                $customer = $charge['customer'];
+
+                \Stripe\Stripe::setApiKey($this->stripeKey);
+                $customer = \Stripe\Customer::retrieve($customer);
+                if ($customer['deleted'] == true){
                     $this->isValid = false;
+                } 
+                else {
+                    if ($charge->status == 'succeeded') {
+                        $this->isValid = true;
+                    } 
+                    else {
+                        $this->isValid = false;
+                    }
                 }
-                return $this->isValid;
             }
+            return $this->isValid;
         }
 
         if (file_exists($this->trial_file) == true){
@@ -81,19 +92,17 @@ class License {
 
     function deactivate() {
         if ($this->isValid()) {
-            // TODO:
-            // Call to your service to de-activate this account
-            // In this sample code, we will check with Stripe server
-
-            if (file_exists($this->stripe_subscription_id) == true) {
-                $subscriptionId = file_get_contents($this->stripe_subscription_id);
-                $subscriptionId = str_replace($phpExit, '', $subscriptionId);
-                if ($subscriptionId != null) {
+            if (file_exists($this->stripe_charge_id) == true) {
+                $chargeId = file_get_contents($this->stripe_charge_id);
+                $chargeId = str_replace($phpExit, '', $chargeId);
+                if ($chargeId != null) {
                     \Stripe\Stripe::setApiKey($this->stripeKey);
-                    $subscription = \Stripe\Subscription::retrieve($subscriptionId);
-                    if ($subscription->ended_at == null) {
-                        $subscription->cancel();
-                    }
+                    $charge = \Stripe\Charge::retrieve($chargeId);
+                    $customer = $charge['customer'];
+
+                    \Stripe\Stripe::setApiKey($this->stripeKey);
+                    $customer = \Stripe\Customer::retrieve($customer);
+                    $customer->delete(); 
                 }
             }
         }
