@@ -45,7 +45,7 @@ Copy and paste this plan ID back into “license.php” where it says #2.
 
 Going back to the root folder containing all the code for your Subscription Plug-In, navigate to “admin” > “subscribe.php” and open it. Search for the form tag that is shown in the picture below and you will need to change the following variables according to your unique plan (underlined).
 	
-<img width="1000" alt="6" src="https://user-images.githubusercontent.com/6611854/60490122-8503d280-9cd8-11e9-93a4-81ba50072c8e.png">
+![](https://user-images.githubusercontent.com/6611854/60490122-8503d280-9cd8-11e9-93a4-81ba50072c8e.png)
 
  * Text on the main page before the Subscription button
  * Data-key: Your Stripe Publishable key 
@@ -93,7 +93,7 @@ In order to create a One-Time fee that will be charged to your connected Stripe 
 
 Going back to the root folder containing all the code for your Subscription Plug-In, navigate to “admin” > “subscribe.php” and open it. Search for the form tag that is shown in the picture below and you will need to change the following variables according to your unique plan (underlined).
 
-<img width="870" alt="11" src="https://user-images.githubusercontent.com/6611854/60490132-8634ff80-9cd8-11e9-9c7c-f5f2f3e0bf46.png">
+<img width="870" alt="11" src="https://user-images.githubusercontent.com/6611854/62601355-c4e75680-b923-11e9-8752-4f84885ca00d.PNG">
 
  * Text on the main page before the Payment button
  * Data-key: Your Stripe account’s publishable key (from when you retrieved it earlier)
