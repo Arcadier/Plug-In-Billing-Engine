@@ -152,11 +152,11 @@ Let's say you want to create a Premium [Marketplace Report Generator](https://gi
 * `index.html` file goes inside `admin > index.php` of the Plug-In Billing Engine
 	```php
 	if($licence->isValid()){
-		?>
-			<link rel="stylesheet" href="css/style.css">
-			<p>Plug-In Content</p>
-			<script type="text/javascript" src="scripts/scripts.js">
-		<?php
+	   ?>
+	      <link rel="stylesheet" href="css/style.css">
+	      <p>Plug-In Content</p>
+	      <script type="text/javascript" src="scripts/scripts.js">
+	   <?php
 	}
 	```
 
