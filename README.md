@@ -2,11 +2,11 @@
 
 ## Charge Marketplace Owners for using your Plug-In ##
 
-This Billing Engine offers 2 ways of collecting payment from the users of your Plug-In: 
-* On a subscription basis
-* One time fee
+You can make marketplace administrators pay for your plug-in in 2 ways:
+* Subscribe to your Plug-In
+* Buy your Plug-In
 
-To start using any of those, you'll need a Stripe Dashboard, you can get one [here](https://stripe.com/en-sg?&utm_campaign=paid_brand-SG_en_Search_Brand_Stripe&utm_medium=cpc&utm_source=google&ad_content=301266036615&utm_term=stripe&utm_matchtype=e&utm_adposition1t1&utm_device=c&gclid=Cj0KCQjw3uboBRDCARIsAO2XcYAvCHyVJVdkKpY27rpxOXvB4kkymiuAAO01RgHZC64I3hNqAqGHbaAaAvsREALw_wcB). Once you have your Stripe account, navigate to `Developers` > `API keys` and take note of you Publishable and Secret Keys.
+To start using any of those, you'll need a Stripe Dashboard, you can get one [here](https://stripe.com/en-sg?&utm_campaign=paid_brand-SG_en_Search_Brand_Stripe&utm_medium=cpc&utm_source=google&ad_content=301266036615&utm_term=stripe&utm_matchtype=e&utm_adposition1t1&utm_device=c&gclid=Cj0KCQjw3uboBRDCARIsAO2XcYAvCHyVJVdkKpY27rpxOXvB4kkymiuAAO01RgHZC64I3hNqAqGHbaAaAvsREALw_wcB). Once you have your Stripe account, navigate to `Developers` > `API keys` and take note of your `Publishable` and `Secret` Keys.
 
 <img width="1416" alt="key" src="https://user-images.githubusercontent.com/6611854/60490138-87662c80-9cd8-11e9-908f-5df8d785f2d1.png">
 
@@ -16,7 +16,7 @@ To start using any of those, you'll need a Stripe Dashboard, you can get one [he
 
 **_Back End_**
 
-Start by downloading/cloning the Subscription Plan folder. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and insert your Stripe’s secret key into the line commented "#1". 
+Start by downloading/cloning the Subscription Plan folder. To connect your Stripe account to the payments made by the user, navigate to `license` > `license.php`, and insert your Stripe Secret key into the line commented "#1". 
 
 <img width="789" alt="1" src="https://user-images.githubusercontent.com/6611854/60490114-83d2a580-9cd8-11e9-8564-7ad7f7eff37d.png">
 
@@ -35,7 +35,7 @@ Once your Pricing Plan has been created, click on it and you will be able to ret
 
 <img width="1431" alt="4" src="https://user-images.githubusercontent.com/6611854/60490120-846b3c00-9cd8-11e9-8c81-053de3a34a42.png">
 
-Copy and paste this plan ID back into “license.php” where it says #2.
+Copy and paste this plan ID back into `license.php` where it says #2.
 
 <img width="789" alt="5" src="https://user-images.githubusercontent.com/6611854/60490121-8503d280-9cd8-11e9-95a3-e0467d0f6c21.png">
 
@@ -43,7 +43,7 @@ Copy and paste this plan ID back into “license.php” where it says #2.
 
 **_Front End_**
 
-Going back to the root folder containing all the code for your Subscription Plug-In, navigate to “admin” > “subscribe.php” and open it. Search for the form tag that is shown in the picture below and you will need to change the following variables according to your unique plan (underlined).
+Going back to the root folder containing all the code for your Subscription Plug-In, navigate to `admin` > `subscribe.php` and open it. Search for the form tag that is shown in the picture below and you will need to change the following variables according to your unique plan (underlined).
 	
 ![](https://user-images.githubusercontent.com/6611854/60490122-8503d280-9cd8-11e9-93a4-81ba50072c8e.png)
 
@@ -64,8 +64,10 @@ Going back to the root folder containing all the code for your Subscription Plug
 
 **_Adding a Free Trial to your Subscription Plan_**
 
-If you want to add a free trial to your Subscription Plan, be sure to specify the duration of this trial on the Front End with the user. Return back to the root folder containing all the code for your Subscription Plug-In and navigate to “admin” > “trial.php” and open it. The underlined code in the illustration below follows this logic: time = current time + number of seconds. Therefore, changing the number of seconds would change the duration of the trial. For example, if you want to have a 15-day trial, your line of code should look like: 
-$time = time() + 15 * 24 * 60 * 60; (15days * 24 hours * 60 minutes * 60 seconds).
+If you want to add a free trial to your Subscription Plan, be sure to specify the duration of this trial on the Front End with the user. Return back to the root folder containing all the code for your Subscription Plug-In and navigate to `admin` > `trial.php` and open it. The underlined code in the illustration below follows this logic: time = current time + number of seconds. Therefore, changing the number of seconds would change the duration of the trial. For example, if you want to have a 15-day trial, your line of code should look like:
+```php
+$time = time() + 15 * 24 * 60 * 60; //(15days * 24 hours * 60 minutes * 60 seconds).
+```
 
 <img width="1133" alt="trial" src="https://user-images.githubusercontent.com/6611854/60697597-a3a6db00-9f1d-11e9-93a6-89f24c86d723.png">
 
@@ -75,11 +77,11 @@ $time = time() + 15 * 24 * 60 * 60; (15days * 24 hours * 60 minutes * 60 seconds
 
 **_Back End_**
 
-Start by downloading Arcadier’s Charge file containing the internal Stripe Plug-In that you will be implementing. To connect your Stripe account to the payments made by the user, navigate to “license” > “license.php”, open it, and paste your Stripe’s secret key into #1.
+Start by downloading Arcadier’s One Time Charge file. To connect your Stripe account to the payments made by the user, navigate to `license` > `license.php`, and paste your Stripe’s secret key into #1.
 
 <img width="647" alt="9" src="https://user-images.githubusercontent.com/6611854/60490130-8634ff80-9cd8-11e9-9f7e-993d35964cf5.png">
 
-In order to create a One-Time fee that will be charged to your connected Stripe account, scroll down till you see the function “buy” and make modifications there. Under the Stripe API call for creating a charge, change the following variables according to your unique charge (underlined).
+In order to create a One-Time fee that will be charged to your connected Stripe account, scroll down till you see the function `buy()` and make modifications there. Under the Stripe API call for creating a charge, change the following variables according to your unique charge (underlined).
 
 <img width="776" alt="10" src="https://user-images.githubusercontent.com/6611854/60490131-8634ff80-9cd8-11e9-8297-cdeabff61d6b.png">
 
@@ -91,7 +93,7 @@ In order to create a One-Time fee that will be charged to your connected Stripe 
 
 **_Front End_**
 
-Going back to the root folder containing all the code for your Subscription Plug-In, navigate to “admin” > “subscribe.php” and open it. Search for the form tag that is shown in the picture below and you will need to change the following variables according to your unique plan (underlined).
+Going back to the root folder containing all the code for your Subscription Plug-In, navigate to `admin` > `subscribe.php` and open it. Search for the form tag that is shown in the picture below and you will need to change the following variables according to your unique plan (underlined).
 
 <img width="870" alt="11" src="https://user-images.githubusercontent.com/6611854/62601355-c4e75680-b923-11e9-8752-4f84885ca00d.PNG">
 
