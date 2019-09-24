@@ -130,7 +130,7 @@ Going back to the root folder (One Time Charge), navigate to `admin` > `subscrib
 
 -----------------------------------------------------------------------------------------------------------------------------
 
-## Where does your Plug-In's source reside in all this? ##
+## Where does your Plug-In's source code reside in all this? ##
 
 The Plug-In Billing engine has the same file structure as all other plug-ins should have:
 * root
