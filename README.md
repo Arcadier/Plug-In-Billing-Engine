@@ -132,8 +132,34 @@ Going back to the root folder (One Time Charge), navigate to `admin` > `subscrib
 
 ## Where does your Plug-In's source reside in all this? ##
 
-Now that you have added a payment method (subscription or one-time fee), here is where you add the actual content of the Plug-In you are trying to sell. Whether you are implementing a Subscription Plan or a One-Time Fee, the location of the actual Plug-In itself should remain the same. In your root folder, you should have the same structure as normal Plug-Ins, in that there are three internal directories called "css", "html", and "scripts". However, in the case of an additional Plug-In Billing Engine, your "html" file should be empty while your "css" and "scripts" files remain the same. Now, return to your root folder and navigate to “admin” > “index.php” and open it. Your Plug-In's html code should go inside the if-statement just before the else-statement. If you take a look at the illustration below, the if-statement asks if the license is valid (which means paid), and if it is, then it will execute the according Plug-In. Essentially your Plug-In's "index.html" code should go within the indicated box.
+The Plug-In Billing engine has the same file structure as all other plug-ins should have:
+* root
+  * admin
+    * html
+	* css
+	* scripts
+  * user
+    * html
+	* css
+	* scripts
+  * `a.php`
+  * `b.php`
+  * `c.php`
+
+Let's say you want to create a Premium [Marketplace Report Generator](https://github.com/Arcadier/Marketplace-Report-Generator). 100% of its source code is found in the `admin` folder and subfolders. So the Marketplace Report Generator's 
+* `.js` files go in the Plug-In Billing Engine's `admin > scripts` folder. 
+* `.css` files go in the Plug-In Billing Engine's `admin > css` folder
+* `index.html` file goes inside `admin > index.php` of the Plug-In Billing Engine
+	```php
+	if($licence->isValid()){
+		?>
+			<link rel="stylesheet" href="css/style.css">
+			<p>Plug-In Content</p>
+			<script type="text/javascript" src="scripts/scripts.js">
+		<?php
+	}
+	```
+
+For Plug-Ins that have user side code as well, you should have your scripts and `php` files check for validity of the marketplace owner's license using the `isValid()` function found in `license.php`. 
 
 <img width="1186" alt="14" src="https://user-images.githubusercontent.com/6611854/60490137-86cd9600-9cd8-11e9-8b79-e257b75c3573.png">
-
-Your Plug-In now has the Plug-In Billing Engine integrated into it and you may now customize your payment request!
