@@ -136,4 +136,3 @@ Now that you have added a payment method (subscription or one-time fee), here is
 <img width="1186" alt="14" src="https://user-images.githubusercontent.com/6611854/60490137-86cd9600-9cd8-11e9-8b79-e257b75c3573.png">
 
 Your Plug-In now has the Plug-In Billing Engine integrated into it and you may now customize your payment request!
-
