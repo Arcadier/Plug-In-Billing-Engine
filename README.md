@@ -84,7 +84,7 @@ After using up a trial, the customer will not be able to use it again, unless he
 _It knows._
 
 <div align="center" style="background-color: #f59d9d; opacity: 1.0; border-radius: 30px;">
-	<h3 style="color: #ff0000;">!!! IMPORTANT !!!</h3>
+	<h3 style="color: #ff0000;">IMPORTANT</h3>
 	<p style="color: black; font-weight: bold;">Uninstalling the Plug-In will unsubscribe the customer from the subscription plan.</p>
 	<p style="color:#000000; font-weight: 600;">Installing the plug-in again will make it ask for payment again.</p>
 
@@ -97,39 +97,40 @@ _It knows._
 
 Start by downloading Arcadier’s One Time Charge file. To connect your Stripe account to the payments made by the user, navigate to `license` > `license.php`, and paste your Stripe’s secret key into #1.
 
-<img width="647" alt="9" src="https://user-images.githubusercontent.com/6611854/60490130-8634ff80-9cd8-11e9-9f7e-993d35964cf5.png">
+<p align="center"><img width="647" alt="9" src="https://user-images.githubusercontent.com/6611854/60490130-8634ff80-9cd8-11e9-9f7e-993d35964cf5.png"></p>
 
-In order to create a One-Time fee that will be charged to your connected Stripe account, scroll down till you see the function `buy()` and make modifications there. Under the Stripe API call for creating a charge, change the following variables according to your unique charge (underlined).
+In order to create a One-Time fee that will be charged to your Stripe account, scroll down till you see the function `buy()` and make modifications there. Under the Stripe API call for creating a charge, change the following variables according to what you want to charge (underlined).
 
-<img width="776" alt="10" src="https://user-images.githubusercontent.com/6611854/60490131-8634ff80-9cd8-11e9-8297-cdeabff61d6b.png">
+<p align="center"><img width="776" alt="10" src="https://user-images.githubusercontent.com/6611854/60490131-8634ff80-9cd8-11e9-8297-cdeabff61d6b.png"></p>
 
- * Amount: The amount (in cents) of money you will be charging the user
+ * `amount`: The amount (in cents) of money you will be charging the user
 	 * This is the actual amount that will be charged to the user
- * Currency: The currency of which the above amount will be charged in
+ * `currency`: The currency of which the above amount will be charged in
 
 -----------------------------------------------------------------------------------------------------------------------------
 
-**_Front End_**
+**Front End**
 
-Going back to the root folder containing all the code for your Subscription Plug-In, navigate to `admin` > `subscribe.php` and open it. Search for the form tag that is shown in the picture below and you will need to change the following variables according to your unique plan (underlined).
+Going back to the root folder (One Time Charge), navigate to `admin` > `subscribe.php` and open it. Search for the form tag that is shown in the picture below and make changes you want (underlined).
 
-<img width="870" alt="11" src="https://user-images.githubusercontent.com/6611854/62601355-c4e75680-b923-11e9-8752-4f84885ca00d.PNG">
+* Text on the main page before the Payment button
+ `data-key`: Your Stripe Publishable key 
+ * `data-name`: Name of your Plug-In
+ * `data-description`: Information for the customer
+ * `data-image`: Absolute or relative URL of the image that you want to appear on the payment pop-up
+ * `data-amount`: The amount (in cents) that the customer is about to pay
+ 	* This is only a front-end facing number. The amount that gets charged from the customer's card is the one that has been specified in `license.php`.
+ * `data-label`: The text on the pay button. E.g: `Buy` or `Subscribe`
 
- * Text on the main page before the Payment button
- * Data-key: Your Stripe account’s publishable key (from when you retrieved it earlier)
- * Data-name: Name of your Plug-In
- * Data-description: Details about specific Payment Plan
- * Data-amount: The value that is ONLY DISPLAYED on the pay button (in cents)
- 	 * This does not affect the actual cost of the One-Time Fee
- * Data-label: The name of the button
+<p align="center"><img width="870" alt="11" src="https://user-images.githubusercontent.com/6611854/62601355-c4e75680-b923-11e9-8752-4f84885ca00d.PNG"></p>
 
-<img width="1429" alt="12" src="https://user-images.githubusercontent.com/6611854/60490134-86cd9600-9cd8-11e9-9bcb-9d29425e163f.png">
+<p align="center"><img width="1429" alt="12" src="https://user-images.githubusercontent.com/6611854/60490134-86cd9600-9cd8-11e9-9bcb-9d29425e163f.png"><p>
 
-<img width="1339" alt="13" src="https://user-images.githubusercontent.com/6611854/60490136-86cd9600-9cd8-11e9-8e98-532ba167a64a.png">
+<p align="center"><img width="1339" alt="13" src="https://user-images.githubusercontent.com/6611854/60490136-86cd9600-9cd8-11e9-8e98-532ba167a64a.png"></p>
 
 -----------------------------------------------------------------------------------------------------------------------------
 
-## Location of the Actual Plug-In you are trying to Sell ##
+## Where does your Plug-In's source reside in all this? ##
 
 Now that you have added a payment method (subscription or one-time fee), here is where you add the actual content of the Plug-In you are trying to sell. Whether you are implementing a Subscription Plan or a One-Time Fee, the location of the actual Plug-In itself should remain the same. In your root folder, you should have the same structure as normal Plug-Ins, in that there are three internal directories called "css", "html", and "scripts". However, in the case of an additional Plug-In Billing Engine, your "html" file should be empty while your "css" and "scripts" files remain the same. Now, return to your root folder and navigate to “admin” > “index.php” and open it. Your Plug-In's html code should go inside the if-statement just before the else-statement. If you take a look at the illustration below, the if-statement asks if the license is valid (which means paid), and if it is, then it will execute the according Plug-In. Essentially your Plug-In's "index.html" code should go within the indicated box.
 
